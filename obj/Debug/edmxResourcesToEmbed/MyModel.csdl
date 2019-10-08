@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLogin">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUpload">
+    <Key>
+      <PropertyRef Name="filid" />
+    </Key>
+    <Property Name="filid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filedate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblCCPoint">
+    <Key>
+      <PropertyRef Name="fkusername" />
+      <PropertyRef Name="ccpno" />
+      <PropertyRef Name="ccpx" />
+      <PropertyRef Name="ccpy" />
+    </Key>
+    <Property Name="fkusername" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ccpno" Type="Int32" Nullable="false" />
+    <Property Name="ccpx" Type="Int32" Nullable="false" />
+    <Property Name="ccpy" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MyDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblImages" EntityType="Self.tblImage" />
+    <EntitySet Name="tblLogins" EntityType="Self.tblLogin" />
+    <EntitySet Name="tblUploads" EntityType="Self.tblUpload" />
+    <EntitySet Name="tblCCPoints" EntityType="Self.tblCCPoint" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyDataBaseModelStoreContainer" CdmEntityContainer="MyDBContext">
+    <EntitySetMapping Name="tblImages">
+      <EntityTypeMapping TypeName="MyDataBaseModel.tblImage">
+        <MappingFragment StoreEntitySet="tblImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLogins">
+      <EntityTypeMapping TypeName="MyDataBaseModel.tblLogin">
+        <MappingFragment StoreEntitySet="tblLogin">
+          <ScalarProperty Name="userid" ColumnName="UserID" />
+          <ScalarProperty Name="username" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUploads">
+      <EntityTypeMapping TypeName="MyDataBaseModel.tblUpload">
+        <MappingFragment StoreEntitySet="tblUploads">
+          <ScalarProperty Name="filid" ColumnName="filid" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filedate" ColumnName="filedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCCPoints">
+      <EntityTypeMapping TypeName="MyDataBaseModel.tblCCPoint">
+        <MappingFragment StoreEntitySet="tblCCPoint">
+          <ScalarProperty Name="fkusername" ColumnName="username" />
+          <ScalarProperty Name="ccpno" ColumnName="ccpno" />
+          <ScalarProperty Name="ccpx" ColumnName="ccpx" />
+          <ScalarProperty Name="ccpy" ColumnName="ccpy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
